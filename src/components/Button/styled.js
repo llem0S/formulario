@@ -13,4 +13,8 @@ export const ContainerButton = styled.button`
   &:hover {
     filter: grayscale(30%);
   }
+
+  &:disabled {
+    filter: grayscale(100%);
+  }
 `;

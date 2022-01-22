@@ -5,25 +5,49 @@ import Information from "./components/Information";
 import Input from "./components/Input";
 
 function App() {
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [nickname, setNickname] = useState("");
+  const [genre, setGenre] = useState("");
+
+  function validateFormInformation() {
+    return name !== "" && email !== "" && nickname !== "" && genre !== "";
+  }
+
+  function validateFormSend() {
+    if (validateFormInformation()) {
+      setPage(2);
+    }
+  }
 
   return (
     <main>
       <ContainerCenter>
         {page === 1 ? (
           <>
-            <Input label="Nome" />
-            <Input label="E-mail" />
-            <Input label="Apelido" />
-            <Input label="Sexo" type="select" />
-            <Button />
+            <Input label="Nome" value={name} onChange={setName} />
+            <Input label="E-mail" value={email} onChange={setEmail} />
+            <Input label="Apelido" value={nickname} onChange={setNickname} />
+            <Input
+              label="Sexo"
+              type="select"
+              value={genre}
+              onChange={setGenre}
+            />
+            <Button
+              label="Salvar"
+              disabled={!validateFormInformation()}
+              onClick={validateFormSend}
+            />
           </>
         ) : (
           <>
-            <Information label="Nome" />
-            <Information label="E:mail" />
-            <Information label="Apelido" />
-            <Information label="Sexo" />
+            <Information label="Nome" value={name} />
+            <Information label="E:mail" value={email} />
+            <Information label="Apelido" value={nickname} />
+            <Information label="Sexo" value={genre} />
+            <Button label="Voltar" onClick={() => setPage(1)} />
           </>
         )}
       </ContainerCenter>

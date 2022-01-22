@@ -5,11 +5,14 @@ function Input({ label, value, onChange, type }) {
     <ContainerInput>
       <label>{label}</label>
       {type === "select" ? (
-        <select>
-          <option disabled selected></option>
-          <option>Masculino</option>
-          <option>Feminino</option>
-          <option>Outros</option>
+        <select
+          onChange={(event) => onChange(event.target.value)}
+          value={value}
+        >
+          <option disabled value=""></option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+          <option value="Outros">Outros</option>
         </select>
       ) : (
         <input
