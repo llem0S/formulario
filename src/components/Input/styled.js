@@ -6,6 +6,7 @@ export const ContainerInput = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
+  width: 100%;
 
   option {
     color: var(--background);

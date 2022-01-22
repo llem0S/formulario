@@ -6,4 +6,8 @@ export const Container = styled.div`
   padding: 74px 122px;
   max-width: 756px;
   max-height: 782px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
