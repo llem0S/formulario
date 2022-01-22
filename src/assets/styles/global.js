@@ -5,6 +5,9 @@ const GlobalStyle = createGlobalStyle`
         --background: #252849;
         --pink: #FA51F4;
         --white: #FFFFFF;
+        --opacity-white: rgba(255, 255, 255, 0.09);
+        --font-input: 16px;
+        --font-label: 16px;
     }
 
     main {
@@ -20,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         background: var(--background);
+    }
+
+    input,label,p,button {
+        font-family: 'Poppins', sans-serif;
     }
 `;
 
